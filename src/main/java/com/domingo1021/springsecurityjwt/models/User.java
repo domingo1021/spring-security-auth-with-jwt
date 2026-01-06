@@ -8,6 +8,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class User {
 
+    public static final String USER = "USER";
+
     @Setter
     private Long id;
 
@@ -15,7 +17,7 @@ public class User {
 
     private String hashedPassword;
 
-    private String role = "USER";
+    private String role = USER;
 
     public User(String username, String hashedPassword) {
         this.username = username;

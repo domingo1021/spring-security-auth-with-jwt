@@ -1,5 +1,7 @@
 package com.domingo1021.springsecurityjwt.security;
 
+import com.domingo1021.springsecurityjwt.models.Admin;
+import com.domingo1021.springsecurityjwt.models.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -31,8 +33,8 @@ public class EndpointFilterChain {
             .authorizeHttpRequests(auth ->
                 auth
                     .requestMatchers("/api/auth/**").permitAll()
-                    .requestMatchers("/api/users").hasRole("USER")
-                    .requestMatchers("/api/admins").hasRole("ADMIN")
+                    .requestMatchers("/api/users").hasRole(User.USER)
+                    .requestMatchers("/api/admins").hasRole(Admin.ADMIN)
                     .anyRequest().authenticated())
             .sessionManagement(httpSecuritySessionManagementConfigurer ->
                 httpSecuritySessionManagementConfigurer.sessionCreationPolicy(
