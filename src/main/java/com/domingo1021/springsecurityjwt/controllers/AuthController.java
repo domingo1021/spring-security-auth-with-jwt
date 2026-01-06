@@ -1,24 +1,14 @@
 package com.domingo1021.springsecurityjwt.controllers;
 
 import com.domingo1021.springsecurityjwt.controllers.dto.AuthRequest;
-import com.domingo1021.springsecurityjwt.controllers.dto.AuthResponse;
 import com.domingo1021.springsecurityjwt.services.AuthService;
-import com.domingo1021.springsecurityjwt.services.UserService;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.*;
 
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-import java.nio.charset.StandardCharsets;
-import java.time.Instant;
-import java.util.Base64;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Implement login and register functionality
